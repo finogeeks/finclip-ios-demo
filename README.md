@@ -1,7 +1,7 @@
 # mop-ios-demo
 mop小程序样例
 
-### 2.1 iOS快速集成
+### 快速集成
 
 1、 修改Podfile文件，增加FinApplet依赖
 
