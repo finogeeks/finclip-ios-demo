@@ -1,15 +1,13 @@
-# mop-ios-demo
-mop小程序样例
+# 五行代码让你的App运行小程序
 
-### 快速集成
 
-1、 修改Podfile文件，增加FinApplet依赖
+## 1、 修改Podfile文件，增加FinApplet依赖
 
 ```
 source 'https://github.com/CocoaPods/Specs.git'
 pod 'FinApplet'
 ```
-2、初始化 SDK **五行代码完成初始化**
+## 2、初始化 SDK **五行代码完成初始化**
 
 在工程的 AppDelegate 中的以下方法中，调用 SDK 的初始化方法。
 
@@ -26,7 +24,7 @@ pod 'FinApplet'
 }
 ```
 
-3、打开小程序
+## 3、打开小程序
 
 ```
 NSString *appId = @"小程序id";
