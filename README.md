@@ -34,7 +34,7 @@ NSString *appId = @"小程序id";
 }];
 ```
 
-* **SDKKEY** 和 **Secret** 可以从前面部署的社区版的管理后台获取。
+* **SDKKEY** 和 **Secret** 可以从免费一键部署的社区版的管理后台获取。
 * **apiServer** 为这里是小程序生态后端的服务地址也就是前文所输入的**IP:端口**。
 * **小程序id** 为在管理后台上架的小程序appid
 * 上述的参数可以在前文服务器部署的后台界面上获取，亦可以在没有部署服务端的情况下在[https://mp.finogeeks.com](https://mp.finogeeks.com)快速注册，免费获取。
