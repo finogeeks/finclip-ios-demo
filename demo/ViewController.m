@@ -56,7 +56,7 @@
 
 - (void)onDemoClick:(id)sender {
     
-    NSString *appId = @"5e4d123647edd60001055df1";
+    NSString *appId = @"5e759b703dc0ef0001c81a31";
     // 打开小程序
     [[FATClient sharedClient] startRemoteApplet:appId startParams:nil InParentViewController:self completion:^(BOOL result, NSError *error) {
         NSLog(@"result:%d---error:%@", result, error);
