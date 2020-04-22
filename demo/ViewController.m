@@ -44,7 +44,7 @@
 
 - (void)onCanvasClick:(id)sender {
     
-    NSString *appId = @"5e3c147a188211000141e9b1";
+    NSString *appId = @"5ea03fa563cb900001d73863";
     // 打开小程序
     [[FATClient sharedClient] startRemoteApplet:appId startParams:@{
         @"path": @"/pages/index/index",
@@ -56,7 +56,7 @@
 
 - (void)onDemoClick:(id)sender {
     
-    NSString *appId = @"5e759b703dc0ef0001c81a31";
+    NSString *appId = @"5ea0401463cb900001d73865";
     // 打开小程序
     [[FATClient sharedClient] startRemoteApplet:appId startParams:nil InParentViewController:self completion:^(BOOL result, NSError *error) {
         NSLog(@"result:%d---error:%@", result, error);
@@ -65,7 +65,7 @@
 
 - (void)onProfileClick:(id)sender {
     
-    NSString *appId = @"5e637a18cbfae4000170fa7a";
+    NSString *appId = @"5ea0412663cb900001d73867";
     // 打开小程序
     [[FATClient sharedClient] startRemoteApplet:appId startParams:nil InParentViewController:self completion:^(BOOL result, NSError *error) {
         NSLog(@"result:%d---error:%@", result, error);
