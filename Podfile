@@ -7,6 +7,7 @@ inhibit_all_warnings!
 
 target "demo" do
    pod 'FinApplet'
+   pod 'FinAppletExt'
 end
 
 
