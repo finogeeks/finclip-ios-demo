@@ -19,6 +19,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 200, 40)];
+    [btn1 setTitle:@"打开绘图小程序" forState:UIControlStateNormal];
+    [btn1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [btn1 setBackgroundColor:[UIColor grayColor]];
+    [btn1 addTarget:self action:@selector(onCanvasClick:) forControlEvents:UIControlEventTouchUpInside];
+    
     UIButton *btn2 = [[UIButton alloc] initWithFrame:CGRectMake(100, 150, 200, 40)];
     [btn2 setTitle:@"打开官方小程序" forState:UIControlStateNormal];
     [btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -31,8 +37,18 @@
     [btn3 setBackgroundColor:[UIColor grayColor]];
     [btn3 addTarget:self action:@selector(onProfileClick:) forControlEvents:UIControlEventTouchUpInside];
     
+    [self.view addSubview:btn1];
     [self.view addSubview:btn2];
     [self.view addSubview:btn3];
+}
+
+- (void)onCanvasClick:(id)sender
+{
+    NSString *appId = @"5facb3a52dcbff00017469bd";
+    // 打开小程序
+    [[FATClient sharedClient] startRemoteApplet:appId startParams:nil InParentViewController:self completion:^(BOOL result, NSError *error) {
+        NSLog(@"result:%d---error:%@", result, error);
+    }];
 }
 
 - (void)onDemoClick:(id)sender {
