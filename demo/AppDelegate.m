@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "FINExtensionHelper.h"
 
 #import <FinApplet/FinApplet.h>
 
@@ -27,6 +28,8 @@
     config.apiPrefix = @"/api/v1/mop";
     
     [[FATClient sharedClient] initWithConfig:config error:nil];
+    
+    [FINExtensionHelper registerCustomApis];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];

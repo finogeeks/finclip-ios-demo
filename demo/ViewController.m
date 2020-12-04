@@ -9,7 +9,11 @@
 #import "ViewController.h"
 #import <FinApplet/FinApplet.h>
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, strong) NSMutableArray *appletList;
 
 @end
 
@@ -19,53 +23,76 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIButton *btn1 = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 200, 40)];
-    [btn1 setTitle:@"打开绘图小程序" forState:UIControlStateNormal];
-    [btn1 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btn1 setBackgroundColor:[UIColor grayColor]];
-    [btn1 addTarget:self action:@selector(onCanvasClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self p_loadData];
     
-    UIButton *btn2 = [[UIButton alloc] initWithFrame:CGRectMake(100, 150, 200, 40)];
-    [btn2 setTitle:@"打开官方小程序" forState:UIControlStateNormal];
-    [btn2 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btn2 setBackgroundColor:[UIColor grayColor]];
-    [btn2 addTarget:self action:@selector(onDemoClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIButton *btn3 = [[UIButton alloc] initWithFrame:CGRectMake(100, 200, 200, 40)];
-    [btn3 setTitle:@"我的对账单" forState:UIControlStateNormal];
-    [btn3 setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btn3 setBackgroundColor:[UIColor grayColor]];
-    [btn3 addTarget:self action:@selector(onProfileClick:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:btn1];
-    [self.view addSubview:btn2];
-    [self.view addSubview:btn3];
+    [self p_initSubViews];
 }
 
-- (void)onCanvasClick:(id)sender
+- (void)p_initSubViews
 {
-    NSString *appId = @"5facb3a52dcbff00017469bd";
-    // 打开小程序
-    [[FATClient sharedClient] startRemoteApplet:appId startParams:nil InParentViewController:self completion:^(BOOL result, NSError *error) {
-        NSLog(@"result:%d---error:%@", result, error);
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
+    
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 44)];
+    headerView.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
+    
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight) style:UITableViewStylePlain];
+    self.tableView.tableHeaderView = headerView;
+    self.tableView.tableFooterView = [UIView new];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    [self.view addSubview:self.tableView];
+}
+
+- (void)p_loadData
+{
+    NSDictionary *startParams = nil;
+    self.appletList = [[NSMutableArray alloc] init];
+
+    [self.appletList addObject:@{@"appId":@"5facb3a52dcbff00017469bd",@"title":@"绘图小程序"}];
+    [self.appletList addObject:@{@"appId":@"5fa214a29a6a7900019b5cc1",@"title":@"官方示例小程序"}];
+    [self.appletList addObject:@{@"appId":@"5fa215459a6a7900019b5cc3",@"title":@"对账单"}];
+    // FAT接口测试小程序
+    [self.appletList addObject:@{@"appId":@"5fc8934aefb8c600019e9747",@"title":@"自定义小程序API示例"}];
+    
+    startParams = @{
+                    @"path" : @"/pages/webview/webview"
+                    };
+    [self.appletList addObject:@{@"appId":@"5fc8934aefb8c600019e9747",@"title":@"自定义H5 API示例", @"startParams":startParams}];
+    [self.tableView reloadData];
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.appletList.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifer = @"identifer";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifer];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifer];
+    }
+    
+    NSDictionary *dict = self.appletList[indexPath.row];
+    cell.textLabel.text = dict[@"title"];
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    NSDictionary *dict = self.appletList[indexPath.row];
+    NSString *appId = dict[@"appId"];
+    NSDictionary *startParams = dict[@"startParams"];
+    
+    [[FATClient sharedClient] startRemoteApplet:appId startParams:startParams InParentViewController:self completion:^(BOOL result, NSError *error) {
+            
     }];
 }
 
-- (void)onDemoClick:(id)sender {
-    
-    NSString *appId = @"5fa214a29a6a7900019b5cc1";
-    // 打开小程序
-    [[FATClient sharedClient] startRemoteApplet:appId startParams:nil InParentViewController:self completion:^(BOOL result, NSError *error) {
-        NSLog(@"result:%d---error:%@", result, error);
-    }];
-}
-
-- (void)onProfileClick:(id)sender {
-    
-    NSString *appId = @"5fa215459a6a7900019b5cc3";
-    // 打开小程序
-    [[FATClient sharedClient] startRemoteApplet:appId startParams:nil InParentViewController:self completion:^(BOOL result, NSError *error) {
-        NSLog(@"result:%d---error:%@", result, error);
-    }];
-}
 @end
