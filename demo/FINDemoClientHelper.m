@@ -99,6 +99,16 @@ static FINDemoClientHelper *instance = nil;
     
     if (customMenu.menuId == 1002) {
         NSLog(@"收藏按钮被点击");
+        // 1.获取用户id
+//        NSString *userId = @"";
+//
+//        // 2.获取小程序id
+//        NSString *appletId = appletInfo.appId;
+//
+//        NSDictionary *param = @{@"userId":userId,@"appletId":appletId};
+        // 3.调用网络接口
+//        [FINNetworkClient postParam:param completion:];
+        
         return;
     }
 }
