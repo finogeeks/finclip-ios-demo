@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "FINExtensionHelper.h"
+#import "FINDemoClientHelper.h"
 
 #import <FinApplet/FinApplet.h>
 
@@ -28,6 +29,8 @@
     config.apiPrefix = @"/api/v1/mop";
     
     [[FATClient sharedClient] initWithConfig:config error:nil];
+    
+    [FATClient sharedClient].delegate = [FINDemoClientHelper sharedHelper];
     
     [FINExtensionHelper registerCustomApis];
     

@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8A8D5069EEC4CE9564C7B391 /* libPods-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A582EE796CD12C1FF4F5DB /* libPods-demo.a */; };
 		9DD565BE23EC45080011FC4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD565BD23EC45080011FC4A /* AppDelegate.m */; };
 		9DD565C423EC45080011FC4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD565C323EC45080011FC4A /* ViewController.m */; };
 		9DD565C923EC450A0011FC4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD565C823EC450A0011FC4A /* Assets.xcassets */; };
 		9DD565CC23EC450A0011FC4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD565CA23EC450A0011FC4A /* LaunchScreen.storyboard */; };
 		9DD565CF23EC450A0011FC4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD565CE23EC450A0011FC4A /* main.m */; };
+		A823321F258C3B7000C1B2D5 /* FINDemoClientHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A823321D258C3B7000C1B2D5 /* FINDemoClientHelper.m */; };
 		A863B745257A09A300959AA1 /* FINExtensionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A863B744257A09A300959AA1 /* FINExtensionHelper.m */; };
+		A8BC097A258BA095001289A3 /* FINCustomMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BC0979258BA095001289A3 /* FINCustomMenuModel.m */; };
+		FBF7F422A6EA50C856DB84F7 /* libPods-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A582EE796CD12C1FF4F5DB /* libPods-demo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,8 +30,12 @@
 		9DD565CB23EC450A0011FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DD565CD23EC450A0011FC4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DD565CE23EC450A0011FC4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A823321D258C3B7000C1B2D5 /* FINDemoClientHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FINDemoClientHelper.m; sourceTree = "<group>"; };
+		A823321E258C3B7000C1B2D5 /* FINDemoClientHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FINDemoClientHelper.h; sourceTree = "<group>"; };
 		A863B743257A09A200959AA1 /* FINExtensionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FINExtensionHelper.h; sourceTree = "<group>"; };
 		A863B744257A09A300959AA1 /* FINExtensionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FINExtensionHelper.m; sourceTree = "<group>"; };
+		A8BC0978258BA095001289A3 /* FINCustomMenuModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FINCustomMenuModel.h; sourceTree = "<group>"; };
+		A8BC0979258BA095001289A3 /* FINCustomMenuModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FINCustomMenuModel.m; sourceTree = "<group>"; };
 		FBEBA7E73B95B66C846E76FF /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -38,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A8D5069EEC4CE9564C7B391 /* libPods-demo.a in Frameworks */,
+				FBF7F422A6EA50C856DB84F7 /* libPods-demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,8 +74,12 @@
 			children = (
 				9DD565BC23EC45080011FC4A /* AppDelegate.h */,
 				9DD565BD23EC45080011FC4A /* AppDelegate.m */,
+				A823321E258C3B7000C1B2D5 /* FINDemoClientHelper.h */,
+				A823321D258C3B7000C1B2D5 /* FINDemoClientHelper.m */,
 				A863B743257A09A200959AA1 /* FINExtensionHelper.h */,
 				A863B744257A09A300959AA1 /* FINExtensionHelper.m */,
+				A8BC0978258BA095001289A3 /* FINCustomMenuModel.h */,
+				A8BC0979258BA095001289A3 /* FINCustomMenuModel.m */,
 				9DD565C223EC45080011FC4A /* ViewController.h */,
 				9DD565C323EC45080011FC4A /* ViewController.m */,
 				9DD565C823EC450A0011FC4A /* Assets.xcassets */,
@@ -211,6 +221,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD565C423EC45080011FC4A /* ViewController.m in Sources */,
+				A823321F258C3B7000C1B2D5 /* FINDemoClientHelper.m in Sources */,
+				A8BC097A258BA095001289A3 /* FINCustomMenuModel.m in Sources */,
 				A863B745257A09A300959AA1 /* FINExtensionHelper.m in Sources */,
 				9DD565BE23EC45080011FC4A /* AppDelegate.m in Sources */,
 				9DD565CF23EC450A0011FC4A /* main.m in Sources */,
@@ -347,6 +359,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9QCKYFU5M4;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -365,6 +379,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9QCKYFU5M4;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
