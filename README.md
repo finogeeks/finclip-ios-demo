@@ -77,7 +77,8 @@ NSString *appId = @"小程序id";
 - 部署方式：满足合规监管多种部署方式，支持私有化部署、混合部署、行业云部署。
 <a name="l5pz3"></a>
 ### 3、FinClip 有哪些典型案例？
-（如需了解更多案例，可以与小助手联系呀）<br />![图片.png](https://www-cdn.finclip.com/images/yippi.jpeg)
+（如需了解更多案例，可以与小助手联系呀）<br />
+![Yippi](https://www-cdn.finclip.com/images/yippi.jpeg)
 <a name="l352x"></a>
 ## ⛳️ 获得更多指引
 ✅ 部署一套私有化社区版：[https://www.finclip.com/mop/document/quickstart/Community-Edition.html](https://www.finclip.com/mop/document/quickstart/Community-Edition.html)<br />✅ 了解iOS相关API：[https://www.finclip.com/mop/document/runtime-sdk/sdk-api/ios.html](https://www.finclip.com/mop/document/runtime-sdk/sdk-api/ios.html)<br />✅ 了解更多iOS常见问题：[https://www.finclip.com/mop/document/faq/SDK/iOS-SDK.html](https://www.finclip.com/mop/document/faq/SDK/iOS-SDK.html)<br />
