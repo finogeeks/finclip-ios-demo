@@ -53,7 +53,7 @@ NSString *appId = @"小程序id";
 
 - **SDKKEY** 和 **Secret** 可以从[ FinClip开放平台](https://finclip.com/#/home) 获取，你也可以直接点击进入[注册页面](https://finclip.com/#/register)
 - 进入平台后，在【应用管理】页面添加你自己的包名后，点击【复制】即可获得key\secret\apisever字段<br />
-- **apiServer** 和 **apiPrefix **是固定字段，请直接参考本demo
+- **apiServer** 和 **apiPrefix** 是固定字段，请直接参考本demo
 - **小程序id** 为在管理后台上架的小程序AppID，需要在【小程序管理】中创建并在【应用管理】中关联 <br />（与微信小程序ID不一样哦！这里是特指finclip平台的ID）
 
 
@@ -78,11 +78,12 @@ NSString *appId = @"小程序id";
 <a name="l5pz3"></a>
 ### 3、FinClip 有哪些典型案例？
 （如需了解更多案例，可以与小助手联系呀）<br />
-![Yippi](https://www-cdn.finclip.com/images/yippi.jpeg)
+![Yippi](media/image/image-1612508915946.jpeg)
 <a name="l352x"></a>
 ## ⛳️ 获得更多指引
 ✅ 部署一套私有化社区版：[https://www.finclip.com/mop/document/quickstart/Community-Edition.html](https://www.finclip.com/mop/document/quickstart/Community-Edition.html)<br />✅ 了解iOS相关API：[https://www.finclip.com/mop/document/runtime-sdk/sdk-api/ios.html](https://www.finclip.com/mop/document/runtime-sdk/sdk-api/ios.html)<br />✅ 了解更多iOS常见问题：[https://www.finclip.com/mop/document/faq/SDK/iOS-SDK.html](https://www.finclip.com/mop/document/faq/SDK/iOS-SDK.html)<br />
 
 <a name="9K1zU"></a>
 ## ☎️ 与我们联系
-如想进入FinClip小程序技术群交流探讨，或了解更多使用场景，请添加小助手微信。<br />![](https://cdn.nlark.com/yuque/0/2021/png/679837/1612498062501-9cb75ea0-7567-46ac-a62c-1ad3397246fb.png#align=left&display=inline&height=213&margin=%5Bobject%20Object%5D&originHeight=611&originWidth=573&size=0&status=done&style=none&width=200)
+如想进入FinClip小程序技术群交流探讨，或了解更多使用场景，请添加小助手微信。<br />
+![](media/image/demo_readme2.png)
