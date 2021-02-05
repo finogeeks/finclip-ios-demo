@@ -378,6 +378,7 @@
 			baseConfigurationReference = 3F2BFD149B6F799A303A07B3 /* Pods-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QCKYFU5M4;
 				ENABLE_BITCODE = NO;
@@ -389,6 +390,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.finogeeks.finclip.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
