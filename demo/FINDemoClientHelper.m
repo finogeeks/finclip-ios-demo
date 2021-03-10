@@ -56,7 +56,7 @@ static FINDemoClientHelper *instance = nil;
     NSString *appletId = appletInfo.appId;
     if ([appletId isEqualToString:@"5facb3a52dcbff00017469bd"]) {
         FINCustomMenuModel *favModel1 = [[FINCustomMenuModel alloc] init];
-        favModel1.menuId = 1001;
+        favModel1.menuId = @"1001";
         favModel1.menuTitle = @"客服";
         favModel1.menuIconImage = [UIImage imageNamed:@"minipro_list_service"];
         
@@ -65,7 +65,7 @@ static FINDemoClientHelper *instance = nil;
     
     if ([appletId isEqualToString:@"5fa214a29a6a7900019b5cc1"]) {
         FINCustomMenuModel *favModel2 = [[FINCustomMenuModel alloc] init];
-        favModel2.menuId = 1002;
+        favModel2.menuId = @"1002";
         favModel2.menuTitle = @"收藏";
         favModel2.menuIconImage = [UIImage imageNamed:@"minipro_list_collect"];
 
@@ -73,12 +73,12 @@ static FINDemoClientHelper *instance = nil;
     }
     
     FINCustomMenuModel *favModel1 = [[FINCustomMenuModel alloc] init];
-    favModel1.menuId = 1001;
+    favModel1.menuId = @"1003";
     favModel1.menuTitle = @"客服";
     favModel1.menuIconImage = [UIImage imageNamed:@"minipro_list_service"];
 
     FINCustomMenuModel *favModel2 = [[FINCustomMenuModel alloc] init];
-    favModel2.menuId = 1002;
+    favModel2.menuId = @"1004";
     favModel2.menuTitle = @"收藏";
     favModel2.menuIconImage = [UIImage imageNamed:@"minipro_list_collect"];
 
