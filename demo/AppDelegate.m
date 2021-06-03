@@ -25,7 +25,7 @@
     
     NSString *appKey = @"22LyZEib0gLTQdU3MUauATBwgfnTCJjdr7FCnywmAEM=";
     FATConfig *config = [FATConfig configWithAppSecret:@"bdfd76cae24d4313" appKey:appKey];
-    config.apiServer = @"https://mp.finogeeks.com";
+    config.apiServer = @"https://api.finclip.com";
     config.apiPrefix = @"/api/v1/mop";
     
     [[FATClient sharedClient] initWithConfig:config error:nil];
