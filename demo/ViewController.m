@@ -59,7 +59,20 @@
                     @"path" : @"/pages/webview/webview"
                     };
     [self.appletList addObject:@{@"appId":@"5fc8934aefb8c600019e9747",@"title":@"自定义H5 API示例", @"startParams":startParams}];
+    [self.appletList addObject:@{@"appId":@"60c5bbf99e094f00015079ee",@"title":@"原生向小程序发送事件"}];
     [self.tableView reloadData];
+}
+
+- (void)sendCustomEvent
+{
+    if (@available(iOS 10.0, *)) {
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:3 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            NSTimeInterval timestamp = [[NSDate date] timeIntervalSince1970];
+            [[FATClient sharedClient].nativeViewManager sendCustomEventWithDetail:@{@"timestamp":@(timestamp)} completion:^(id result, NSError *error) {
+                NSLog(@"sendCustomEventW:%@", error);
+            }];
+        }];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -91,7 +104,9 @@
     NSDictionary *startParams = dict[@"startParams"];
     
     [[FATClient sharedClient] startRemoteApplet:appId startParams:startParams InParentViewController:self completion:^(BOOL result, NSError *error) {
-            
+        if ([appId isEqualToString:@"60c5bbf99e094f00015079ee"]) {
+            [self sendCustomEvent];
+        }
     }];
 }
 
