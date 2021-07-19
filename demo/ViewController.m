@@ -60,6 +60,9 @@
                     };
     [self.appletList addObject:@{@"appId":@"5fc8934aefb8c600019e9747",@"title":@"自定义H5 API示例", @"startParams":startParams}];
     [self.appletList addObject:@{@"appId":@"60c5bbf99e094f00015079ee",@"title":@"原生向小程序发送事件"}];
+    //登录授权示例需要原生App注入相关方法
+    [self registAppletLoginApi];
+    [self.appletList addObject:@{@"appId":@"60f051ea525ea10001c0bd22",@"title":@"小程序登录授权示例"}];
     [self.tableView reloadData];
 }
 
@@ -73,6 +76,44 @@
             }];
         }];
     }
+}
+
+- (void)registAppletLoginApi {
+    //注入获取用户信息
+    [[FATClient sharedClient]registerExtensionApi:@"getUserProfile" handle:^(id param, FATExtensionApiCallback callback) {
+        NSDictionary *userInfo = @{@"nickName":@"张三",@"avatarUrl":@"",@"gender":@1,@"country":@"中国",@"province":@"广东省",@"city":@"深圳",@"language":@"zh_CN"};
+        NSDictionary *resDic = @{@"userInfo":userInfo};
+        callback(FATExtensionCodeSuccess,resDic);
+    }];
+    
+    //注入登录方法
+    [[FATClient sharedClient]registerExtensionApi:@"login" handle:^(id param, FATExtensionApiCallback callback) {
+        //回调给小程序结果
+        UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:nil message:@"是否同意授权登录？" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *agreeAction = [UIAlertAction actionWithTitle:@"允许" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            
+            callback(FATExtensionCodeSuccess,@{@"desc":@"登录成功"});
+            
+        }];
+        [alertVC addAction:agreeAction];
+        UIAlertAction *refuseAction = [UIAlertAction actionWithTitle:@"拒绝" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            callback(FATExtensionCodeSuccess,@{@"desc":@"登录失败"});
+        }];
+        [alertVC addAction:refuseAction];
+        if (self.presentedViewController) {
+            [self.presentedViewController presentViewController:alertVC animated:YES completion:^{
+                        
+            }];
+        } else {
+            [self presentViewController:alertVC animated:YES completion:^{
+                        
+            }];
+        }
+        
+        
+
+    }];
+    
 }
 
 #pragma mark - UITableViewDataSource

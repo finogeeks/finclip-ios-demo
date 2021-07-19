@@ -118,7 +118,7 @@
 				9DD565B523EC45080011FC4A /* Sources */,
 				9DD565B623EC45080011FC4A /* Frameworks */,
 				9DD565B723EC45080011FC4A /* Resources */,
-				BF23969D00C03EFEF2CAA500 /* [CP] Embed Pods Frameworks */,
+				D5CFBA4174EF15FFF4AA041A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -174,21 +174,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BF23969D00C03EFEF2CAA500 /* [CP] Embed Pods Frameworks */ = {
+		D5CFBA4174EF15FFF4AA041A /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E71B82096235B4713AA534F8 /* [CP] Check Pods Manifest.lock */ = {

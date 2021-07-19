@@ -29,6 +29,7 @@
     config.apiPrefix = @"/api/v1/mop";
     
     [[FATClient sharedClient] initWithConfig:config error:nil];
+    [[FATClient sharedClient] setEnableLog:YES];
     
     [FATClient sharedClient].delegate = [FINDemoClientHelper sharedHelper];
     
