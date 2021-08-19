@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>appId</key>
+		<string>5facb3a52dcbff00017469bd</string>
+		<key>title</key>
+		<string>绘图小程序</string>
+		<key>startParams</key>
+		<dict/>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<string>5fa214a29a6a7900019b5cc1</string>
+		<key>title</key>
+		<string>官方示例小程序</string>
+		<key>startParams</key>
+		<dict/>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<string>5fa215459a6a7900019b5cc3</string>
+		<key>title</key>
+		<string>对账单</string>
+		<key>startParams</key>
+		<dict/>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<string>5fc8934aefb8c600019e9747</string>
+		<key>title</key>
+		<string>自定义小程序API示例</string>
+		<key>startParams</key>
+		<dict/>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<string>5fc8934aefb8c600019e9747</string>
+		<key>title</key>
+		<string>自定义H5 API示例</string>
+		<key>startParams</key>
+		<dict>
+			<key>path</key>
+			<string>/pages/webview/webview</string>
+		</dict>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<string>60c5bbf99e094f00015079ee</string>
+		<key>title</key>
+		<string>原生向小程序发送事件</string>
+		<key>startParams</key>
+		<dict/>
+	</dict>
+	<dict>
+		<key>appId</key>
+		<string>60f051ea525ea10001c0bd22</string>
+		<key>title</key>
+		<string>小程序登录授权示例</string>
+		<key>startParams</key>
+		<dict/>
+	</dict>
+</array>
+</plist>

@@ -9,7 +9,9 @@
 
 @interface FINExtensionHelper : NSObject
 
-+ (void)registerCustomApis;
++ (instancetype)sharedHelper;
+
+- (void)registerCustomApis;
 
 @end
 

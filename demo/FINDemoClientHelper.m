@@ -13,12 +13,23 @@ static FINDemoClientHelper *instance = nil;
 
 @implementation FINDemoClientHelper
 
-+ (instancetype)sharedHelper
-{
++ (instancetype)sharedHelper {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[[self class] alloc] init];
     });
+    return instance;
+}
+
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [super allocWithZone:zone];
+    });
+    return instance;
+}
+
+- (id)copy {
     return instance;
 }
 
@@ -92,12 +103,12 @@ static FINDemoClientHelper *instance = nil;
 - (void)customMenu:(id<FATAppletMenuProtocol>)customMenu inApplet:(FATAppletInfo *)appletInfo didClickAtPath:(NSString *)path
 {
     NSLog(@"自定义按钮被点击");
-    if (customMenu.menuId == 1001) {
+    if ([customMenu.menuId isEqual:@"1001"]) {
         NSLog(@"客服按钮被点击");
         return;
     }
     
-    if (customMenu.menuId == 1002) {
+    if ([customMenu.menuId isEqual:@"1002"]) {
         NSLog(@"收藏按钮被点击");
         // 1.获取用户id
 //        NSString *userId = @"";

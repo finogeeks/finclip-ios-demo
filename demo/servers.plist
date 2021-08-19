@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>com.finogeeks.finclip.demo</key>
+	<dict>
+		<key>appKey</key>
+		<string>22LyZEib0gLTQdU3MUauATBwgfnTCJjdr7FCnywmAEM=</string>
+		<key>appSecret</key>
+		<string>bdfd76cae24d4313</string>
+		<key>apiServer</key>
+		<string>https://api.finclip.com</string>
+		<key>apiPrefix</key>
+		<string>/api/v1/mop/</string>
+		<key>cryptType</key>
+		<string>MD5</string>
+	</dict>
+	<key>com.finogeeks.mop.finosprite</key>
+	<dict>
+		<key>appKey</key>
+		<string>22LyZEib0gLTQdU3MUauAQVLIkNNhTSGIN42gXzlAsk=</string>
+		<key>appSecret</key>
+		<string>ae55433be2f62915</string>
+		<key>apiServer</key>
+		<string>https://finchat-mop-b.finogeeks.club</string>
+		<key>apiPrefix</key>
+		<string>/api/v1/mop/</string>
+		<key>cryptType</key>
+		<string>SM</string>
+	</dict>
+</dict>
+</plist>

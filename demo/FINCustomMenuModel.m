@@ -10,7 +10,7 @@
 
 @implementation FINCustomMenuModel
 
-@synthesize menuId, menuIconImage, menuTitle;
+@synthesize menuId, menuIconImage, menuTitle, menuType;
 
 - (id)copyWithZone:(NSZone *)zone
 {
