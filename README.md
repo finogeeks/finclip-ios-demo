@@ -81,7 +81,7 @@ NSString *appId = @"小程序id";
 ![Yippi](media/image/image-1612508915946.jpeg)
 <a name="l352x"></a>
 ## ⛳️ 获得更多指引
-✅ 部署一套私有化社区版：[https://www.finclip.com/mop/document/quickstart/Community-Edition.html](https://www.finclip.com/mop/document/quickstart/Community-Edition.html)<br />✅ 了解iOS相关API：[https://www.finclip.com/mop/document/runtime-sdk/sdk-api/ios.html](https://www.finclip.com/mop/document/runtime-sdk/sdk-api/ios.html)<br />✅ 了解更多iOS常见问题：[https://www.finclip.com/mop/document/faq/SDK/iOS-SDK.html](https://www.finclip.com/mop/document/faq/SDK/iOS-SDK.html)<br />
+✅ 部署一套私有化社区版：[https://finclip.com/mop/document/introduce/quickStart/cloud-server-deployment-guide.html](https://finclip.com/mop/document/introduce/quickStart/cloud-server-deployment-guide.html)<br />✅ 了解iOS相关API：[https://finclip.com/mop/document/runtime-sdk/ios/ios-api.html](https://finclip.com/mop/document/runtime-sdk/ios/ios-api.html)<br />✅ 了解更多iOS常见问题：[https://finclip.com/mop/document/runtime-sdk/ios/ios-issue.html](https://finclip.com/mop/document/runtime-sdk/ios/ios-issue.html)<br />
 
 <a name="9K1zU"></a>
 ## ☎️ 与我们联系
