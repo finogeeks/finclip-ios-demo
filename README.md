@@ -1,33 +1,39 @@
-# iOS工程 readme
+<p align="center">
+    <a href="https://www.finclip.com?from=github">
+    <img width="auto" src="https://www.finclip.com/mop/document/images/logo.png">
+    </a>
+</p>
 
+<p align="center"> 
+    <strong>FinClip iOS DEMO</strong></br>
+<p>
+<p align="center"> 
+        本项目提供在 iOS 环境中运行小程序的 DEMO 样例
+<p>
 
+<p align="center"> 
+	👉 <a href="https://www.finclip.com?from=github">https://www.finclip.com/</a> 👈
+</p>
 
-<a name="ulvpb"></a>
-## 🤩 FinClip是什么?
-有没有想过，能把一个已经开发好的微信小程序，放到你自己的APP里面运行？<br />想象一下，你只需要开发一次，就能把这个业务模块同时放到微信、自有App<br />甚至！你都不用开发业务，直接拖下来一个做好的业务模块，放到自己App里面，嘿！跑起来了！<br />听起来是不是有点不可思议？<br />没关系，这就是FinClip，帮助你实现这个不可思议！<br />
+-----
+## 🤔 FinClip 是什么?
 
-<a name="y9LBK"></a>
-## 🤔 你要怎么做？<br />
-只需要三个步骤：
+有没有**想过**，开发好的微信小程序能放在自己的 APP 里直接运行，只需要开发一次小程序，就能在不同的应用中打开它，是不是很不可思议？
 
-1. get一个小程序！你可以：<br />自己开发一个微信小程序<br />or 在我们的 [小程序生态圈](https://mp.finogeeks.com/#/ecosystem) 中挑一个小程序（支持直接下载代码包）<br />or 直接使用我们提供的项目：[https://github.com/finogeeks/miniprogram-demo](https://github.com/finogeeks/miniprogram-demo)）
-1. 把finclip SDK集成到你的APP里面
-1. 登录[FinClip小程序开放平台](https://finclip.com/#/home)，完成关联
+有没有**试过**，在自己的 APP 中引入一个 SDK ，应用中不仅可以打开小程序，还能自定义小程序接口，修改小程序样式，是不是觉得更不可思议？
 
-然后，见证奇迹，看看这个微信小程序直接在你的App里面运行起来的效果吧！<br />
+这就是 FinClip ，就是有这么多不可思议！
 
-<a name="TaX3b"></a>
-## 🔜 五行代码让你的App运行小程序
-<a name="Te1LR"></a>
-### 1、 修改Podfile文件，增加FinApplet依赖
-```
+## ⚙️ 操作步骤
+### 第一步 修改 Podfile 文件，增加 FinApplet 依赖
+```pod
 source 'https://github.com/CocoaPods/Specs.git'
 pod 'FinApplet'
 ```
-<a name="axnzO"></a>
-### 2、初始化 SDK 五行代码完成初始化
-在工程的 AppDelegate 中的以下方法中，调用 SDK 的初始化方法。
-```
+
+### 第二步 五行代码完成SDK初始化
+在工程的 `AppDelegate` 中的以下方法中，调用 SDK 的初始化方法。
+```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
     NSString *appKey = @"SDKKEY";
@@ -39,53 +45,46 @@ pod 'FinApplet'
     return YES;
 }
 ```
-<a name="zYJ7X"></a>
-### 3、打开小程序
-```
+
+### 第三步打开小程序
+```objc
 NSString *appId = @"小程序id";
 // 打开小程序
 [[FATClient sharedClient] startRemoteApplet:appId startParams:nil InParentViewController:self completion:^(BOOL result, NSError *error) {
     NSLog(@"result:%d---error:%@", result, error);
 }];
 ```
-以上涉及的参数在本项目中，均已有配置；clone下来之后，**不需要改sdk key和应用id**，直接运行即可<br />❌ 不要修改包名、key、secret、AppID ❌<br />
-<br />但如果你需要把这些内容更改为自己的信息，你可以：<br />
 
-- **SDKKEY** 和 **Secret** 可以从[ FinClip开放平台](https://finclip.com/#/home) 获取，你也可以直接点击进入[注册页面](https://finclip.com/#/register)
-- 进入平台后，在【应用管理】页面添加你自己的包名后，点击【复制】即可获得key\secret\apisever字段<br />
-- **apiServer** 和 **apiPrefix** 是固定字段，请直接参考本demo
-- **小程序id** 为在管理后台上架的小程序AppID，需要在【小程序管理】中创建并在【应用管理】中关联 <br />（与微信小程序ID不一样哦！这里是特指finclip平台的ID）
+- **SDK KEY** 和 **SDK SECRET** 可以从 [FinClip](https://finclip.com/#/home)  获取，点 [这里](https://finclip.com/#/register) 注册账号；
+- 进入平台后，在「应用管理」页面添加你自己的包名后，点击「复制」即可获得  key\secret\apisever 字段；
+- **apiServer** 和 **apiPrefix** 是固定字段，请直接参考本 DEMO ；
+- **小程序 ID** 是管理后台上架的小程序 APP ID，需要在「小程序管理」中创建并在「应用管理」中关联；
+> 小程序 ID 与 微信小程序ID 不一样哦！（这里是特指 FinClip 平台的 ID ）
 
+## 📋 集成文档
+[点击这里](https://www.finclip.com/mop/document/introduce/quickStart/intergration-guide.html#_1-ios-%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90) 查看 iOS 快速集成文档
 
+## 🔗 常用链接
+以下内容是您在 FinClip 进行开发与体验时，常见的问题与指引信息
 
-<a name="GZU3P"></a>
-## 📚 想要通关全程？这里是全程攻略
-直接跑demo虽然快，不过快速通关总会留下各种遗憾。<br />来吧，跟随全程攻略，了解一下“让App运行小程序”的全貌吧：
-<a name="Ri882"></a>
-### 1、FinClip 平台是什么？
+- [FinClip 官网](https://www.finclip.com/#/home)
+- [示例小程序](https://www.finclip.com/#/market)
+- [文档中心](https://www.finclip.com/mop/document/)
+- [SDK 部署指南](https://www.finclip.com/mop/document/introduce/quickStart/intergration-guide.html)
+- [小程序代码结构](https://www.finclip.com/mop/document/develop/guide/structure.html)
+- [iOS 集成指引](https://www.finclip.com/mop/document/runtime-sdk/ios/ios-integrate.html)
+- [Android 集成指引](https://www.finclip.com/mop/document/runtime-sdk/android/android-integrate.html)
+- [Flutter 集成指引](https://www.finclip.com/mop/document/runtime-sdk/flutter/flutter-integrate.html)
 
-- Finclip平台是凡泰极客旗下的一款可私有化的小程序开放平台<br />
-- 凡泰极客借鉴微信、支付宝等主流小程序平台技术，进一步打造出可私有化的小程序开放平台产品 —— FinClip，该平台主要由两个客户端组成，一个是运营端，负责审核小程序内容，确保小程序的内容符合合规要求；另一个是企业端，负责开发小程序及小程序上下架管理。
-- FinClip 面向全行业发布，尤其适合金融业及其他需要自建数字化生态以及实现业务场景敏捷迭代的行业，帮助合作伙伴构建一个安全、合规、可控的小程序生态。
-<a name="sx7EX"></a>
-### 2、FinClip 平台的特色？
+## ☎️ 联系我们
+微信扫描下面二维码，关注官方公众号 **「凡泰极客」**，获取更多精彩内容。<br>
+<img width="150px" src="https://www.finclip.com/mop/document/images/ic_qr.svg">
 
-- 多端上线：同一小程序可以同步上线多个宿主端（即小程序可上线的 APP），为开发者节省大量的人力和时间。
-- 合规引流：解决“行业应用嵌入第三方网络空间”的安全合规问题，合规引流，连接金融服务场景。
-- 方便快捷：相较于 APP，小程序开发周期短，开发成本低等特性让更多的开发者能够轻松、快速的参与到开发过程中，实现快速上线，快速起量。
-- 优质体验：小程序拥有优于现有 H5 页面的用户体验，帮助企业/机构获取更多渠道用户，同时节省获客成本。
-- 部署方式：满足合规监管多种部署方式，支持私有化部署、混合部署、行业云部署。
-<a name="l5pz3"></a>
-### 3、FinClip 有哪些典型案例？
-（如需了解更多案例，可以与小助手联系呀）<br />
-![Yippi](media/image/image-1612508915946.jpeg)
-<a name="l352x"></a>
-## ⛳️ 获得更多指引
-✅ 部署一套私有化社区版：[https://finclip.com/mop/document/introduce/quickStart/cloud-server-deployment-guide.html](https://finclip.com/mop/document/introduce/quickStart/cloud-server-deployment-guide.html)<br />✅ 了解iOS相关API：[https://finclip.com/mop/document/runtime-sdk/ios/ios-api.html](https://finclip.com/mop/document/runtime-sdk/ios/ios-api.html)<br />✅ 了解更多iOS常见问题：[https://finclip.com/mop/document/runtime-sdk/ios/ios-issue.html](https://finclip.com/mop/document/runtime-sdk/ios/ios-issue.html)<br />
+微信扫描下面二维码，邀请进官方微信交流群（加好友备注：finclip 咨询），获取更多精彩内容。<br>
+<img width="150px" src="https://finclip-homeweb-1251849568.cos.ap-guangzhou.myqcloud.com/images/ldy111.jpg">
 
-<a name="9K1zU"></a>
-## ☎️ 与我们联系
-如想进入FinClip小程序技术群交流探讨，或了解更多使用场景，请添加小助手微信。<br />
-![](media/image/demo_readme2.png)
+## Stargazers
+[![Stargazers repo roster for @finogeeks/finclip-ios-demo](https://reporoster.com/stars/finogeeks/finclip-ios-demo)](https://github.com/finogeeks/finclip-ios-demo/stargazers)
 
-（如图片未能正常展示，请直接手动添加wx号：liudiyang1212 ）
+## Forkers
+[![Forkers repo roster for @finogeeks/finclip-ios-demo](https://reporoster.com/forks/finogeeks/finclip-ios-demo)](https://github.com/finogeeks/finclip-ios-demo/network/members)
