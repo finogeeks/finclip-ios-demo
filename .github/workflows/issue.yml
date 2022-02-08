@@ -1,0 +1,13 @@
+name: Notify
+on:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Notify
+        run: curl --location --request POST 'https://api.finogeeks.club/api/v1/finstore/webhooks/61b331d79b3dad0001f72fa2/postreceive?nonce=jhd2QyrArsc' --header "Content-Type:application/json" --data-raw '{"msg":"仓库 ${{github.repository}} 有新的 issue"}'
