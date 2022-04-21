@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9DD565BE23EC45080011FC4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD565BD23EC45080011FC4A /* AppDelegate.m */; };
-		9DD565C423EC45080011FC4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD565C323EC45080011FC4A /* ViewController.m */; };
+		9DD565C423EC45080011FC4A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD565C323EC45080011FC4A /* MainViewController.m */; };
 		9DD565C923EC450A0011FC4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9DD565C823EC450A0011FC4A /* Assets.xcassets */; };
 		9DD565CC23EC450A0011FC4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD565CA23EC450A0011FC4A /* LaunchScreen.storyboard */; };
 		9DD565CF23EC450A0011FC4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD565CE23EC450A0011FC4A /* main.m */; };
@@ -18,6 +18,8 @@
 		A823321F258C3B7000C1B2D5 /* FINDemoClientHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A823321D258C3B7000C1B2D5 /* FINDemoClientHelper.m */; };
 		A863B745257A09A300959AA1 /* FINExtensionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A863B744257A09A300959AA1 /* FINExtensionHelper.m */; };
 		A8BC097A258BA095001289A3 /* FINCustomMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A8BC0979258BA095001289A3 /* FINCustomMenuModel.m */; };
+		A8CE73562810F8C800965B7E /* FCQRCodeScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CE73512810F8C800965B7E /* FCQRCodeScanViewController.m */; };
+		A8CE73572810F8C800965B7E /* FCQRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = A8CE73542810F8C800965B7E /* FCQRScanView.m */; };
 		FBF7F422A6EA50C856DB84F7 /* libPods-demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 28A582EE796CD12C1FF4F5DB /* libPods-demo.a */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +29,8 @@
 		9DD565B923EC45080011FC4A /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DD565BC23EC45080011FC4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9DD565BD23EC45080011FC4A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9DD565C223EC45080011FC4A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9DD565C323EC45080011FC4A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9DD565C223EC45080011FC4A /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		9DD565C323EC45080011FC4A /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		9DD565C823EC450A0011FC4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9DD565CB23EC450A0011FC4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9DD565CD23EC450A0011FC4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +44,10 @@
 		A863B744257A09A300959AA1 /* FINExtensionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FINExtensionHelper.m; sourceTree = "<group>"; };
 		A8BC0978258BA095001289A3 /* FINCustomMenuModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FINCustomMenuModel.h; sourceTree = "<group>"; };
 		A8BC0979258BA095001289A3 /* FINCustomMenuModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FINCustomMenuModel.m; sourceTree = "<group>"; };
+		A8CE73512810F8C800965B7E /* FCQRCodeScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCQRCodeScanViewController.m; sourceTree = "<group>"; };
+		A8CE73522810F8C800965B7E /* FCQRCodeScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCQRCodeScanViewController.h; sourceTree = "<group>"; };
+		A8CE73542810F8C800965B7E /* FCQRScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCQRScanView.m; sourceTree = "<group>"; };
+		A8CE73552810F8C800965B7E /* FCQRScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCQRScanView.h; sourceTree = "<group>"; };
 		FBEBA7E73B95B66C846E76FF /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,16 +84,12 @@
 		9DD565BB23EC45080011FC4A /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				A8CE734B2810F3B400965B7E /* Common */,
 				9DD565BC23EC45080011FC4A /* AppDelegate.h */,
 				9DD565BD23EC45080011FC4A /* AppDelegate.m */,
-				A823321E258C3B7000C1B2D5 /* FINDemoClientHelper.h */,
-				A823321D258C3B7000C1B2D5 /* FINDemoClientHelper.m */,
-				A863B743257A09A200959AA1 /* FINExtensionHelper.h */,
-				A863B744257A09A300959AA1 /* FINExtensionHelper.m */,
-				A8BC0978258BA095001289A3 /* FINCustomMenuModel.h */,
-				A8BC0979258BA095001289A3 /* FINCustomMenuModel.m */,
-				9DD565C223EC45080011FC4A /* ViewController.h */,
-				9DD565C323EC45080011FC4A /* ViewController.m */,
+				A8CE734F2810F8C800965B7E /* Scan */,
+				9DD565C223EC45080011FC4A /* MainViewController.h */,
+				9DD565C323EC45080011FC4A /* MainViewController.m */,
 				9DD565C823EC450A0011FC4A /* Assets.xcassets */,
 				9DD565CA23EC450A0011FC4A /* LaunchScreen.storyboard */,
 				9DD565CD23EC450A0011FC4A /* Info.plist */,
@@ -97,6 +99,46 @@
 				A0E041BC26CE720900D58D47 /* servers.plist */,
 			);
 			path = demo;
+			sourceTree = "<group>";
+		};
+		A8CE734B2810F3B400965B7E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				A823321E258C3B7000C1B2D5 /* FINDemoClientHelper.h */,
+				A823321D258C3B7000C1B2D5 /* FINDemoClientHelper.m */,
+				A863B743257A09A200959AA1 /* FINExtensionHelper.h */,
+				A863B744257A09A300959AA1 /* FINExtensionHelper.m */,
+				A8BC0978258BA095001289A3 /* FINCustomMenuModel.h */,
+				A8BC0979258BA095001289A3 /* FINCustomMenuModel.m */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		A8CE734F2810F8C800965B7E /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				A8CE73502810F8C800965B7E /* Controller */,
+				A8CE73532810F8C800965B7E /* View */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		A8CE73502810F8C800965B7E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A8CE73522810F8C800965B7E /* FCQRCodeScanViewController.h */,
+				A8CE73512810F8C800965B7E /* FCQRCodeScanViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A8CE73532810F8C800965B7E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A8CE73552810F8C800965B7E /* FCQRScanView.h */,
+				A8CE73542810F8C800965B7E /* FCQRScanView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		ACE3AE3120D1733A6BB38C8A /* Frameworks */ = {
@@ -127,7 +169,8 @@
 				9DD565B523EC45080011FC4A /* Sources */,
 				9DD565B623EC45080011FC4A /* Frameworks */,
 				9DD565B723EC45080011FC4A /* Resources */,
-				D5CFBA4174EF15FFF4AA041A /* [CP] Copy Pods Resources */,
+				DFB054DF507DE3B18CCCE932 /* [CP] Embed Pods Frameworks */,
+				74745716D7A4B2CB6E4BC657 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -186,7 +229,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		D5CFBA4174EF15FFF4AA041A /* [CP] Copy Pods Resources */ = {
+		74745716D7A4B2CB6E4BC657 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -201,6 +244,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DFB054DF507DE3B18CCCE932 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-demo/Pods-demo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E71B82096235B4713AA534F8 /* [CP] Check Pods Manifest.lock */ = {
@@ -232,10 +292,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DD565C423EC45080011FC4A /* ViewController.m in Sources */,
+				9DD565C423EC45080011FC4A /* MainViewController.m in Sources */,
 				A823321F258C3B7000C1B2D5 /* FINDemoClientHelper.m in Sources */,
 				A8BC097A258BA095001289A3 /* FINCustomMenuModel.m in Sources */,
+				A8CE73562810F8C800965B7E /* FCQRCodeScanViewController.m in Sources */,
 				A863B745257A09A300959AA1 /* FINExtensionHelper.m in Sources */,
+				A8CE73572810F8C800965B7E /* FCQRScanView.m in Sources */,
 				9DD565BE23EC45080011FC4A /* AppDelegate.m in Sources */,
 				9DD565CF23EC450A0011FC4A /* main.m in Sources */,
 			);

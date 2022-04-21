@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "MainViewController.h"
 #import "FINExtensionHelper.h"
 #import "FINDemoClientHelper.h"
 
@@ -28,17 +28,22 @@
     NSString *bundleId = [NSBundle mainBundle].bundleIdentifier;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"servers" ofType:@"plist"];
     NSDictionary *servers = [NSDictionary dictionaryWithContentsOfFile:path];
-    NSDictionary *data = servers[bundleId];
-    NSString *appKey = data[@"appKey"];
-    NSString *appSecret = data[@"appSecret"];
-    NSString *apiServer = data[@"apiServer"];
-    NSString *apiPrefix = data[@"apiPrefix"];
-    FATApiCryptType cryptType = [data[@"cryptType"] isEqualToString:@"MD5"] ? FATApiCryptTypeMD5 : FATApiCryptTypeSM;
+    NSArray *array = servers[bundleId];
+    NSMutableArray *configs = [NSMutableArray array];
+    for (NSDictionary *data in array) {
+        NSString *appKey = data[@"appKey"];
+        NSString *appSecret = data[@"appSecret"];
+        NSString *apiServer = data[@"apiServer"];
+        FATApiCryptType cryptType = [data[@"cryptType"] isEqualToString:@"MD5"] ? FATApiCryptTypeMD5 : FATApiCryptTypeSM;
+        FATStoreConfig *storeConfig = [[FATStoreConfig alloc] init];
+        storeConfig.sdkKey = appKey;
+        storeConfig.sdkSecret = appSecret;
+        storeConfig.apiServer = apiServer;
+        storeConfig.cryptType = cryptType;
+        [configs addObject:storeConfig];
+    }
     
-    FATConfig *config = [FATConfig configWithAppSecret:appSecret appKey:appKey];
-    config.apiServer = apiServer;
-    config.apiPrefix = apiPrefix;
-    config.cryptType = cryptType;
+    FATConfig *config = [FATConfig configWithStoreConfigs:configs];
     [[FATClient sharedClient] initWithConfig:config error:nil];
     [[FATClient sharedClient] setEnableLog:YES];
     
@@ -46,12 +51,16 @@
     // 注入自定义api
     [[FINExtensionHelper sharedHelper] registerCustomApis];
     
-    // 该appID【wx85663af68a0cbbc8】绑定的应用为凡泰助手，若要生效，请修改BundleID为com.finogeeks.mop.finosprite
-    [WXApi registerApp:@"wx85663af68a0cbbc8" universalLink:apiServer];
+    if ([bundleId isEqualToString:@"com.finogeeks.mop.finosprite"]) {
+        // 该appID【wx85663af68a0cbbc8】绑定的应用为凡泰助手，若要生效，请修改BundleID为com.finogeeks.mop.finosprite
+        [WXApi registerApp:@"wx85663af68a0cbbc8" universalLink:@"https://www.finclip.com"];
+    }
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    self.window.rootViewController = [[ViewController alloc] init];
+    
+    MainViewController *mainVC = [[MainViewController alloc] init];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:mainVC];
     [self.window makeKeyAndVisible];
     
     return YES;
