@@ -48,6 +48,7 @@
 		A8CE73522810F8C800965B7E /* FCQRCodeScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCQRCodeScanViewController.h; sourceTree = "<group>"; };
 		A8CE73542810F8C800965B7E /* FCQRScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FCQRScanView.m; sourceTree = "<group>"; };
 		A8CE73552810F8C800965B7E /* FCQRScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FCQRScanView.h; sourceTree = "<group>"; };
+		D6278645283CC38F001270F1 /* demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = demo.entitlements; sourceTree = "<group>"; };
 		FBEBA7E73B95B66C846E76FF /* Pods-demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demo.debug.xcconfig"; path = "Target Support Files/Pods-demo/Pods-demo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +85,7 @@
 		9DD565BB23EC45080011FC4A /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				D6278645283CC38F001270F1 /* demo.entitlements */,
 				A8CE734B2810F3B400965B7E /* Common */,
 				9DD565BC23EC45080011FC4A /* AppDelegate.h */,
 				9DD565BD23EC45080011FC4A /* AppDelegate.m */,
@@ -432,6 +434,7 @@
 			baseConfigurationReference = FBEBA7E73B95B66C846E76FF /* Pods-demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = demo/demo.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9QCKYFU5M4;
@@ -454,6 +457,7 @@
 			baseConfigurationReference = 3F2BFD149B6F799A303A07B3 /* Pods-demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = demo/demo.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 9QCKYFU5M4;

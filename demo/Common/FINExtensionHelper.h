@@ -6,8 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <WechatOpenSDK/WXApi.h>
 
-@interface FINExtensionHelper : NSObject
+@interface FINExtensionHelper : NSObject<WXApiDelegate>
 
 + (instancetype)sharedHelper;
 

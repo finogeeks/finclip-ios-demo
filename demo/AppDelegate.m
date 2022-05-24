@@ -10,9 +10,7 @@
 #import "MainViewController.h"
 #import "FINExtensionHelper.h"
 #import "FINDemoClientHelper.h"
-
 #import <FinApplet/FinApplet.h>
-#import <WechatOpenSDK/WXApi.h>
 
 @interface AppDelegate ()
 
@@ -53,7 +51,7 @@
     
     if ([bundleId isEqualToString:@"com.finogeeks.mop.finosprite"]) {
         // 该appID【wx85663af68a0cbbc8】绑定的应用为凡泰助手，若要生效，请修改BundleID为com.finogeeks.mop.finosprite
-        [WXApi registerApp:@"wx85663af68a0cbbc8" universalLink:@"https://www.finclip.com"];
+        [WXApi registerApp:@"wx85663af68a0cbbc8" universalLink:@"https://www.finclip.com/finosprite/"];
     }
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
@@ -67,10 +65,7 @@
 }
 
 - (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options {
-    if ([url.scheme isEqualToString:@"wx85663af68a0cbbc8"]) {
-        return [WXApi handleOpenURL:url delegate:(id<WXApiDelegate> _Nullable)[FINExtensionHelper sharedHelper]];
-    }
-    return YES;
+    return [WXApi handleOpenURL:url delegate:[FINExtensionHelper sharedHelper]];
 }
 
 @end

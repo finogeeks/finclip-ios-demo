@@ -44,31 +44,46 @@ static FINExtensionHelper *instance = nil;
 
 // 注入自定义api
 - (void)registerCustomApis {
-    [[FATClient sharedClient] registerExtensionApi:@"onNative" handle:^(id param, FATExtensionApiCallback callback) {
+    [[FATClient sharedClient] registerExtensionApi:@"onNative" handler:^(FATAppletInfo *appletInfo, id param, FATExtensionApiCallback callback) {
         NSString *inputText = @"床前明月光，疑是地上霜。举头望明月，低头思故乡。";
         callback(FATExtensionCodeSuccess, @{@"text":inputText});
     }];
     
-    [[FATClient sharedClient] fat_registerWebApi:@"user_define_native" handle:^(id param, FATExtensionApiCallback callback) {
+    [[FATClient sharedClient] fat_registerWebApi:@"user_define_native" handler:^(FATAppletInfo *appletInfo, id param, FATExtensionApiCallback callback) {
         NSString *inputText = @"鹅鹅鹅，曲项向天歌，白毛浮绿水，红掌拨清波。";
         callback(FATExtensionCodeSuccess, @{@"text":inputText});
     }];
     
     // 注入获取用户信息
-    [[FATClient sharedClient] registerExtensionApi:@"getUserProfile" handle:^(id param, FATExtensionApiCallback callback) {
+    [[FATClient sharedClient] registerExtensionApi:@"getUserProfile" handler:^(FATAppletInfo *appletInfo, id param, FATExtensionApiCallback callback) {
         NSDictionary *userInfo = @{@"nickName":@"张三",@"avatarUrl":@"",@"gender":@1,@"country":@"中国",@"province":@"广东省",@"city":@"深圳",@"language":@"zh_CN"};
         NSDictionary *resDic = @{@"userInfo":userInfo};
         callback(FATExtensionCodeSuccess,resDic);
     }];
     // 注入登录方法
-    [[FATClient sharedClient] registerExtensionApi:@"login" handle:^(id param, FATExtensionApiCallback callback) {
+    [[FATClient sharedClient] registerExtensionApi:@"login" handler:^(FATAppletInfo *appletInfo, id param, FATExtensionApiCallback callback) {
         // 处理小程序登录逻辑后，调用小程序回调
         // 登录成功回调示例
-        callback(FATExtensionCodeSuccess,@{@"desc":@"登录成功"});
+        NSString *wxid = appletInfo.wechatLoginInfo[@"wechatOriginId"];
+        NSString *path = appletInfo.wechatLoginInfo[@"profileUrl"];
+        BOOL canWXLogin = [WXApi isWXAppInstalled] && [wxid length] > 0 && [path length] > 0;
+        if (canWXLogin) {
+            self.callback = callback;
+            WXLaunchMiniProgramReq *req = [WXLaunchMiniProgramReq object];
+            req.userName = wxid;
+            req.path = path;
+            req.miniProgramType = WXMiniProgramTypeRelease;
+            [WXApi sendReq:req completion:^(BOOL success) {
+                NSLog(@"打开微信:%d", success);
+            }];
+        }
+        else {
+            callback(FATExtensionCodeSuccess,@{@"desc":@"登录成功"});
+        }
     }];
     // 注入微信支付方法
     __weak typeof(self) weakSelf = self;
-    [[FATClient sharedClient] registerExtensionApi:@"requestPayment" handle:^(id param, FATExtensionApiCallback callback) {
+    [[FATClient sharedClient] registerExtensionApi:@"requestPayment" handler:^(FATAppletInfo *appletInfo, id param, FATExtensionApiCallback callback) {
         // 支付调用，调用结果通过回调通告小程序
         [weakSelf getTestPayment:callback];
     }];
@@ -133,28 +148,37 @@ static FINExtensionHelper *instance = nil;
     
 }
 
-//支付结果回调
+//微信结果回调
 - (void)onResp:(BaseResp *)resp {
-    if ([resp isKindOfClass:[PayResp class]]) {
-        PayResp *response = (PayResp*)resp;
-        //response.errCode
-//        WXSuccess           = 0,    /**< 成功    */
-//        WXErrCodeCommon     = -1,   /**< 普通错误类型    */
-//        WXErrCodeUserCancel = -2,   /**< 用户点击取消并返回    */
-//        WXErrCodeSentFail   = -3,   /**< 发送失败    */
-//        WXErrCodeAuthDeny   = -4,   /**< 授权失败    */
-//        WXErrCodeUnsupport  = -5,   /**< 微信不支持    */
-        switch (response.errCode) {
-            case WXSuccess:
-                self.callback(FATExtensionCodeSuccess, nil);
-                break;
-                
-            default:
-                self.callback(FATExtensionCodeFailure, nil);
-                break;
+    FATExtensionCode code = FATExtensionCodeSuccess;
+    if (resp.errCode != WXSuccess) {
+        code = FATExtensionCodeFailure;
+    }
+    if ([resp isKindOfClass:[PayResp class]]) {//支付
+        self.callback(code, nil);
+    }
+    else if ([resp isKindOfClass:[WXLaunchMiniProgramResp class]]) {//打开小程序
+        NSString *extMsg = ((WXLaunchMiniProgramResp *)resp).extMsg;
+        if (extMsg.length <= 0) {
+            self.callback(FATExtensionCodeFailure, nil);
+        }
+        else {
+            self.callback(code, [self dictionaryWithJsonString:extMsg]);
+        
         }
     }
 }
 
+- (NSDictionary *)dictionaryWithJsonString:(NSString *)jsonString {
+    if (jsonString == nil) return nil;
 
+    NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *err;
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:jsonData  options:NSJSONReadingMutableContainers  error:&err];
+    if(err) {
+        NSLog(@"json解析失败：%@",err);
+        return nil;
+    }
+    return dic;
+}
 @end
