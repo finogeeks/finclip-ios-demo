@@ -11,6 +11,7 @@ target "demo" do
    pod 'FinAppletWebRTC'
    pod 'FinAppletBDMap'
    pod 'FinAppletGDMap'
+   pod 'FinAppletBLE'
    pod 'WechatOpenSDK'
 end
 

@@ -172,7 +172,7 @@
 				9DD565B623EC45080011FC4A /* Frameworks */,
 				9DD565B723EC45080011FC4A /* Resources */,
 				DFB054DF507DE3B18CCCE932 /* [CP] Embed Pods Frameworks */,
-				74745716D7A4B2CB6E4BC657 /* [CP] Copy Pods Resources */,
+				33C306F0B0B6C469FD078FB0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -231,7 +231,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		74745716D7A4B2CB6E4BC657 /* [CP] Copy Pods Resources */ = {
+		33C306F0B0B6C469FD078FB0 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -441,10 +441,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.finogeeks.finclip.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -464,10 +461,7 @@
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.finogeeks.finclip.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = github_demo_adhoc;

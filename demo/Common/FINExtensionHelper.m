@@ -60,6 +60,7 @@ static FINExtensionHelper *instance = nil;
         NSDictionary *resDic = @{@"userInfo":userInfo};
         callback(FATExtensionCodeSuccess,resDic);
     }];
+    
     // 注入登录方法
     [[FATClient sharedClient] registerExtensionApi:@"login" handler:^(FATAppletInfo *appletInfo, id param, FATExtensionApiCallback callback) {
         // 处理小程序登录逻辑后，调用小程序回调

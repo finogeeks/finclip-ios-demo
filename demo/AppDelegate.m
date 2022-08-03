@@ -10,7 +10,10 @@
 #import "MainViewController.h"
 #import "FINExtensionHelper.h"
 #import "FINDemoClientHelper.h"
+
 #import <FinApplet/FinApplet.h>
+#import <FinAppletBDMap/FinAppletBDMap.h>
+#import <FinAppletGDMap/FinAppletGDMap.h>
 
 @interface AppDelegate ()
 
@@ -48,6 +51,11 @@
     [FATClient sharedClient].delegate = [FINDemoClientHelper sharedHelper];
     // 注入自定义api
     [[FINExtensionHelper sharedHelper] registerCustomApis];
+    
+//    // 注册百度地图
+//    [FATBDMapComponent setBDMapAppKey:@"申请的key"];
+//    // 注册高德地图
+//    [FATGDMapComponent setGDMapAppKey:@"申请的key"];
     
     if ([bundleId isEqualToString:@"com.finogeeks.mop.finosprite"]) {
         // 该appID【wx85663af68a0cbbc8】绑定的应用为凡泰助手，若要生效，请修改BundleID为com.finogeeks.mop.finosprite

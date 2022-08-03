@@ -53,16 +53,23 @@ source 'https://github.com/CocoaPods/Specs.git'
 pod 'FinApplet'
 ```
 
-### 第二步 五行代码完成SDK初始化
+### 第二步 完成SDK初始化
 在工程的 `AppDelegate` 中的以下方法中，调用 SDK 的初始化方法。
 ```objc
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	
-    NSString *appKey = @"SDKKEY";
-    FATConfig *config = [FATConfig configWithAppSecret:@"SECRET" appKey:appKey];
-    config.apiServer = @"https://api.finclip.com"; 
-    config.apiPrefix = @"/api/v1/mop";
+	// 需要添加至App中的代码--start
+    NSMutableArray *storeArrayM = [NSMutableArray array];
+    FATStoreConfig *storeConfig = [[FATStoreConfig alloc] init];
+    storeConfig.sdkKey = @"您的sdkKey信息";
+    storeConfig.sdkSecret = @"您的sdkSecret信息";
+    storeConfig.apiServer = @"服务器域名";
+    storeConfig.apmServer = @"apm统计事件的域名";
+    [storeArrayM addObject:storeConfig];
+    
+    FATConfig *config = [FATConfig configWithStoreConfigs:storeArrayM];
     [[FATClient sharedClient] initWithConfig:config error:nil];
+    // 需要添加至App中的代码--end
     
     return YES;
 }
@@ -82,6 +89,25 @@ NSString *appId = @"小程序id";
 - **apiServer** 和 **apiPrefix** 是固定字段，请直接参考本 DEMO ；
 - **小程序 ID** 是管理后台上架的小程序 APP ID，需要在「小程序管理」中创建并在「应用管理」中关联；
 > 小程序 ID 与 微信小程序ID 不一样哦！（这里是特指 FinClip 平台的 ID ）
+
+## 📋 Demo功能介绍
+**微信登录**
+微信登录是通过自定义api注入`login`来实现的，需要依赖微信开放SDK。
+可参考`FINExtensionHelper` 中 注册的`login`的逻辑。
+
+**微信支付**
+微信支付也是通过自定义api注入`requestPayment`来实现的，需要依赖微信开放SDK。
+可参考`FINExtensionHelper` 中 注册的`requestPayment`的逻辑。
+
+**百度地图**
+小程序中的Map组件默认是使用系统的Map以及相关api来实现的。您也可以选择使用百度地图的Map组件。我们在Demo里已经添加了`FinAppletBDMap`的依赖，它是我们基于百度地图做的扩展SDK。
+如果要使用百度地图版本的Map组件，则只需要在初始化FinClip SDK成功后，调用`[FATBDMapComponent setBDMapAppKey:@"申请的key"];`即可。
+可参考`AppDelegate`的`application:didFinishLaunchingWithOptions:`方法里的注册百度地图。
+
+**高德地图**
+同理，如果选择使用高德地图的Map组件。我们在Demo里也已经添加了`FinAppletGDMap`的依赖，它是我们基于高德地图做的扩展SDK。
+如果要使用高德地图版本的Map组件，则只需要在初始化FinClip SDK成功后，调用`[FATGDMapComponent setGDMapAppKey:@"申请的key"];`即可。
+可参考`AppDelegate`的`application:didFinishLaunchingWithOptions:`方法里的注册高德地图。
 
 ## 📋 集成文档
 [点击这里](https://www.finclip.com/mop/document/introduce/quickStart/intergration-guide.html#_1-ios-%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90) 查看 iOS 快速集成文档
