@@ -94,12 +94,14 @@ NSString *appId = @"小程序id";
 **微信登录**
 
 微信登录是通过自定义api注入`login`来实现的，需要依赖微信开放SDK。
-可参考`FINExtensionHelper` 中 注册的`login`的逻辑。
+* 首先注册微信SDK的Key和universallink。
+* 通过自定义api，注册`login`。可参考`FINExtensionHelper` 中 注册的`login`的逻辑。
 
 **微信支付**
 
 微信支付也是通过自定义api注入`requestPayment`来实现的，需要依赖微信开放SDK。
-可参考`FINExtensionHelper` 中 注册的`requestPayment`的逻辑。
+* 首先注册微信SDK的Key和universallink。
+* 通过自定义api，注册`requestPayment`。可参考`FINExtensionHelper` 中 注册的`requestPayment`的逻辑。
 
 **百度地图**
 
