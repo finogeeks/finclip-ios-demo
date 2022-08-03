@@ -92,20 +92,25 @@ NSString *appId = @"小程序id";
 
 ## 📋 Demo功能介绍
 **微信登录**
+
 微信登录是通过自定义api注入`login`来实现的，需要依赖微信开放SDK。
 可参考`FINExtensionHelper` 中 注册的`login`的逻辑。
 
 **微信支付**
+
 微信支付也是通过自定义api注入`requestPayment`来实现的，需要依赖微信开放SDK。
 可参考`FINExtensionHelper` 中 注册的`requestPayment`的逻辑。
 
 **百度地图**
+
 小程序中的Map组件默认是使用系统的Map以及相关api来实现的。您也可以选择使用百度地图的Map组件。我们在Demo里已经添加了`FinAppletBDMap`的依赖，它是我们基于百度地图做的扩展SDK。
+
 如果要使用百度地图版本的Map组件，则只需要在初始化FinClip SDK成功后，调用`[FATBDMapComponent setBDMapAppKey:@"申请的key"];`即可。
 可参考`AppDelegate`的`application:didFinishLaunchingWithOptions:`方法里的注册百度地图。
 
 **高德地图**
 同理，如果选择使用高德地图的Map组件。我们在Demo里也已经添加了`FinAppletGDMap`的依赖，它是我们基于高德地图做的扩展SDK。
+
 如果要使用高德地图版本的Map组件，则只需要在初始化FinClip SDK成功后，调用`[FATGDMapComponent setGDMapAppKey:@"申请的key"];`即可。
 可参考`AppDelegate`的`application:didFinishLaunchingWithOptions:`方法里的注册高德地图。
 
