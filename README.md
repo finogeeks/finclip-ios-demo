@@ -109,6 +109,7 @@ NSString *appId = @"小程序id";
 可参考`AppDelegate`的`application:didFinishLaunchingWithOptions:`方法里的注册百度地图。
 
 **高德地图**
+
 同理，如果选择使用高德地图的Map组件。我们在Demo里也已经添加了`FinAppletGDMap`的依赖，它是我们基于高德地图做的扩展SDK。
 
 如果要使用高德地图版本的Map组件，则只需要在初始化FinClip SDK成功后，调用`[FATGDMapComponent setGDMapAppKey:@"申请的key"];`即可。
