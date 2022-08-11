@@ -90,6 +90,46 @@ NSString *appId = @"小程序id";
 - **小程序 ID** 是管理后台上架的小程序 APP ID，需要在「小程序管理」中创建并在「应用管理」中关联；
 > 小程序 ID 与 微信小程序ID 不一样哦！（这里是特指 FinClip 平台的 ID ）
 
+## 📋 集成文档
+[点击这里](https://www.finclip.com/mop/document/introduce/quickStart/intergration-guide.html#_1-ios-%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90) 查看 iOS 快速集成文档
+
+## 📘 目录结构
+```
+.
+├── LICENSE
+├── Podfile 依赖的SDK配置文件
+├── README.md
+├── demo
+│   ├── AppDelegate.h
+│   ├── AppDelegate.m
+│   ├── Assets.xcassets 图片资源
+│   ├── Base.lproj
+│   │   └── LaunchScreen.storyboard
+│   ├── Common
+│   │   ├── FINCustomMenuModel.h  自定义更多视图里的菜单对象
+│   │   ├── FINCustomMenuModel.m  自定义更多视图里的菜单对象
+│   │   ├── FINDemoClientHelper.h  小程序SDK的代理方法实现类
+│   │   ├── FINDemoClientHelper.m  小程序SDK的代理方法实现类
+│   │   ├── FINExtensionHelper.h   注入自定义api的实现类
+│   │   └── FINExtensionHelper.m   注入自定义api的实现类
+│   ├── Info.plist  工程配置
+│   ├── MainViewController.h   首页
+│   ├── MainViewController.m   首页
+│   ├── Scan  扫码功能
+│   │   ├── Controller
+│   │   │   ├── FCQRCodeScanViewController.h
+│   │   │   └── FCQRCodeScanViewController.m
+│   │   └── View
+│   │       ├── FCQRScanView.h
+│   │       └── FCQRScanView.m
+│   ├── demo.entitlements
+│   ├── demo.plist  demo工程小程序列表
+│   ├── finosprite.plist finosprite工程小程序列表
+│   ├── main.m
+│   └── servers.plist  初始化SDK的服务器列表
+├── demo.xcodeproj
+```
+
 ## 📋 Demo功能介绍
 **微信登录**
 
@@ -116,9 +156,6 @@ NSString *appId = @"小程序id";
 
 如果要使用高德地图版本的Map组件，则只需要在初始化FinClip SDK成功后，调用`[FATGDMapComponent setGDMapAppKey:@"申请的key"];`即可。
 可参考`AppDelegate`的`application:didFinishLaunchingWithOptions:`方法里的注册高德地图。
-
-## 📋 集成文档
-[点击这里](https://www.finclip.com/mop/document/introduce/quickStart/intergration-guide.html#_1-ios-%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90) 查看 iOS 快速集成文档
 
 ## 🔗 常用链接
 以下内容是您在 FinClip 进行开发与体验时，常见的问题与指引信息
