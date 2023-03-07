@@ -137,7 +137,7 @@
     [[FATClient sharedClient] startAppletWithRequest:request InParentViewController:self completion:^(BOOL result, FATError *error) {
             
     } closeCompletion:^{
-            
+        [[FATClient sharedClient] clearMemoryCache];
     }];
 }
 

@@ -46,7 +46,8 @@
     
     FATConfig *config = [FATConfig configWithStoreConfigs:configs];
     [[FATClient sharedClient] initWithConfig:config error:nil];
-    [[FATClient sharedClient] setEnableLog:YES];
+    // 设置Log日志
+    [[FATClient sharedClient].logManager initLogWithLogDir:nil logLevel:FATLogLevelVerbose consoleLog:YES];
     
     [FATClient sharedClient].delegate = [FINDemoClientHelper sharedHelper];
     // 注入自定义api
@@ -57,10 +58,8 @@
 //    // 注册高德地图
 //    [FATGDMapComponent setGDMapAppKey:@"申请的key"];
     
-    if ([bundleId isEqualToString:@"com.finogeeks.mop.finosprite"]) {
-        // 该appID【wx85663af68a0cbbc8】绑定的应用为凡泰助手，若要生效，请修改BundleID为com.finogeeks.mop.finosprite
-        [WXApi registerApp:@"wx85663af68a0cbbc8" universalLink:@"https://www.finclip.com/finosprite/"];
-    }
+    // 注册微信SDK
+//    [WXApi registerApp:@"微信开放sdk的key" universalLink:@"微信开放sdk的universalLink"];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];

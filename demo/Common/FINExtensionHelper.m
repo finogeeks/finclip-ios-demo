@@ -85,14 +85,19 @@ static FINExtensionHelper *instance = nil;
     // 注入微信支付方法
     __weak typeof(self) weakSelf = self;
     [[FATClient sharedClient] registerExtensionApi:@"requestPayment" handler:^(FATAppletInfo *appletInfo, id param, FATExtensionApiCallback callback) {
-        // 支付调用，调用结果通过回调通告小程序
+        // 支付有两种方式实现：
+        // 1.利用app实现支付，结果通过回调通告小程序
         [weakSelf getTestPayment:callback];
+        
+        // 2.使用微信小程序实现支付
+//        [weakSelf wechatMiniProgramPayment:appletInfo param:param callback:callback];
     }];
 }
 
 #pragma mark - WXPay
 // 模拟向服务请求支付订单
 - (void)getTestPayment:(FATExtensionApiCallback)callback {
+    // 以下支持示例代码，演示自行实现的过程
     NSString *urlString = @"https://finclip-testing.finogeeks.club/mop/wechat-auth/api/order";
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *requset = [NSMutableURLRequest requestWithURL:url];
@@ -130,6 +135,42 @@ static FINExtensionHelper *instance = nil;
         callback(FATExtensionCodeFailure, nil);
     }];
     [task resume];
+}
+
+- (void)wechatMiniProgramPayment:(FATAppletInfo *)appletInfo
+                           param:(NSDictionary *)param
+                        callback:(FATExtensionApiCallback)callback
+{
+    NSDictionary *info = appletInfo.wechatLoginInfo;
+    NSString *wxid = appletInfo.wechatLoginInfo[@"wechatOriginId"];
+    NSString *path = appletInfo.wechatLoginInfo[@"paymentUrl"];
+    if (wxid.length == 0 || path.length == 0) {
+        callback(FATExtensionCodeFailure, @{@"desc":@"微信小程序关联信息异常"});
+        return;
+    }
+    
+    NSDictionary *dataDic = param;
+    NSString *payString = [NSString stringWithFormat:@"?appId=%@&nonceStr=%@&package=%@&paySign=%@&signType=%@&timeStamp=%@&type=%@", dataDic[@"appId"], dataDic[@"nonceStr"], dataDic[@"package"], dataDic[@"paySign"], dataDic[@"signType"], dataDic[@"timeStamp"], dataDic[@"type"]];
+    
+    // 需要appDelegate 里注册微信开放SDK。
+    WXLaunchMiniProgramReq *launchMiniProgramReq = [WXLaunchMiniProgramReq object];
+    launchMiniProgramReq.userName = wxid;
+    launchMiniProgramReq.path = [NSString stringWithFormat:@"%@%@", wxid, payString];
+    if (appletInfo.appletVersionType == FATAppletVersionTypeRelease) {
+        launchMiniProgramReq.miniProgramType = WXMiniProgramTypeRelease; //正式版
+    } else if (appletInfo.appletVersionType == FATAppletVersionTypeTrial) {
+        launchMiniProgramReq.miniProgramType = WXMiniProgramTypePreview; //体验版
+    } else {
+        launchMiniProgramReq.miniProgramType = WXMiniProgramTypeTest; //开发版
+    }
+    [WXApi sendReq:launchMiniProgramReq completion:^(BOOL success) {
+        NSLog(@"打开微信:%d", success);
+        if (success) {
+            callback(FATExtensionCodeSuccess, @{@"desc":@"支付成功"});
+            return;
+        }
+        callback(FATExtensionCodeFailure, @{@"desc":@"支付失败"});
+    }];
 }
 
 // 签名加密（正常是放在后台处理，由上面的请求接口返回
