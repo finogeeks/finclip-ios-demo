@@ -13,7 +13,6 @@
 		9DD565CC23EC450A0011FC4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9DD565CA23EC450A0011FC4A /* LaunchScreen.storyboard */; };
 		9DD565CF23EC450A0011FC4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD565CE23EC450A0011FC4A /* main.m */; };
 		A0E041B926CE6DAD00D58D47 /* demo.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0E041B826CE6DAD00D58D47 /* demo.plist */; };
-		A0E041BB26CE6E1F00D58D47 /* finosprite.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0E041BA26CE6E1F00D58D47 /* finosprite.plist */; };
 		A0E041BD26CE720900D58D47 /* servers.plist in Resources */ = {isa = PBXBuildFile; fileRef = A0E041BC26CE720900D58D47 /* servers.plist */; };
 		A823321F258C3B7000C1B2D5 /* FINDemoClientHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A823321D258C3B7000C1B2D5 /* FINDemoClientHelper.m */; };
 		A863B745257A09A300959AA1 /* FINExtensionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A863B744257A09A300959AA1 /* FINExtensionHelper.m */; };
@@ -36,7 +35,6 @@
 		9DD565CD23EC450A0011FC4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9DD565CE23EC450A0011FC4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A0E041B826CE6DAD00D58D47 /* demo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = demo.plist; sourceTree = "<group>"; };
-		A0E041BA26CE6E1F00D58D47 /* finosprite.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = finosprite.plist; sourceTree = "<group>"; };
 		A0E041BC26CE720900D58D47 /* servers.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = servers.plist; sourceTree = "<group>"; };
 		A823321D258C3B7000C1B2D5 /* FINDemoClientHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FINDemoClientHelper.m; sourceTree = "<group>"; };
 		A823321E258C3B7000C1B2D5 /* FINDemoClientHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FINDemoClientHelper.h; sourceTree = "<group>"; };
@@ -97,7 +95,6 @@
 				9DD565CD23EC450A0011FC4A /* Info.plist */,
 				9DD565CE23EC450A0011FC4A /* main.m */,
 				A0E041B826CE6DAD00D58D47 /* demo.plist */,
-				A0E041BA26CE6E1F00D58D47 /* finosprite.plist */,
 				A0E041BC26CE720900D58D47 /* servers.plist */,
 			);
 			path = demo;
@@ -221,7 +218,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9DD565CC23EC450A0011FC4A /* LaunchScreen.storyboard in Resources */,
-				A0E041BB26CE6E1F00D58D47 /* finosprite.plist in Resources */,
 				A0E041B926CE6DAD00D58D47 /* demo.plist in Resources */,
 				9DD565C923EC450A0011FC4A /* Assets.xcassets in Resources */,
 				A0E041BD26CE720900D58D47 /* servers.plist in Resources */,

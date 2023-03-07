@@ -97,7 +97,10 @@ static FINExtensionHelper *instance = nil;
 #pragma mark - WXPay
 // 模拟向服务请求支付订单
 - (void)getTestPayment:(FATExtensionApiCallback)callback {
-    // 以下支持示例代码，演示自行实现的过程
+    // 以下只是示例代码，演示自行实现的过程
+    // 1.请求自己业务后台的订单信息
+    // 2.调用app的微信支付功能支付
+    // 3.返回支付结果给小程序
     NSString *urlString = @"https://finclip-testing.finogeeks.club/mop/wechat-auth/api/order";
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *requset = [NSMutableURLRequest requestWithURL:url];

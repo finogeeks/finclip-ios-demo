@@ -25,7 +25,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    // servers.plist维护了不同应用，初始化finclip的参数（因为微信支付需要绑定一个可用的账号）
     NSString *bundleId = [NSBundle mainBundle].bundleIdentifier;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"servers" ofType:@"plist"];
     NSDictionary *servers = [NSDictionary dictionaryWithContentsOfFile:path];
@@ -59,6 +58,7 @@
 //    [FATGDMapComponent setGDMapAppKey:@"申请的key"];
     
     // 注册微信SDK
+    // 调试微信登录和微信支付时，需要修改bundleId，并配置跟bundleId匹配的微信 appKey、universalLink
 //    [WXApi registerApp:@"微信开放sdk的key" universalLink:@"微信开放sdk的universalLink"];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

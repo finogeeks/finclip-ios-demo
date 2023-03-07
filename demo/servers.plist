@@ -25,18 +25,5 @@
 			<string>SM</string>
 		</dict>
 	</array>
-	<key>com.finogeeks.mop.finosprite</key>
-	<array>
-		<dict>
-			<key>appKey</key>
-			<string>22LyZEib0gLTQdU3MUauAQVLIkNNhTSGIN42gXzlAsk=</string>
-			<key>appSecret</key>
-			<string>ae55433be2f62915</string>
-			<key>apiServer</key>
-			<string>https://finchat-mop-b.finogeeks.club</string>
-			<key>cryptType</key>
-			<string>SM</string>
-		</dict>
-	</array>
 </dict>
 </plist>
