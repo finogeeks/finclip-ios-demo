@@ -93,69 +93,6 @@ NSString *appId = @"小程序id";
 ## 📋 集成文档
 [点击这里](https://www.finclip.com/mop/document/introduce/quickStart/intergration-guide.html#_1-ios-%E5%BF%AB%E9%80%9F%E9%9B%86%E6%88%90) 查看 iOS 快速集成文档
 
-## 📘 目录结构
-```
-.
-├── LICENSE
-├── Podfile 依赖的SDK配置文件
-├── README.md
-├── demo
-│   ├── AppDelegate.h
-│   ├── AppDelegate.m
-│   ├── Assets.xcassets 图片资源
-│   ├── Base.lproj
-│   │   └── LaunchScreen.storyboard
-│   ├── Common
-│   │   ├── FINCustomMenuModel.h  自定义更多视图里的菜单对象
-│   │   ├── FINCustomMenuModel.m  自定义更多视图里的菜单对象
-│   │   ├── FINDemoClientHelper.h  小程序SDK的代理方法实现类
-│   │   ├── FINDemoClientHelper.m  小程序SDK的代理方法实现类
-│   │   ├── FINExtensionHelper.h   注入自定义api的实现类
-│   │   └── FINExtensionHelper.m   注入自定义api的实现类
-│   ├── Info.plist  工程配置
-│   ├── MainViewController.h   首页
-│   ├── MainViewController.m   首页
-│   ├── Scan  扫码功能
-│   │   ├── Controller
-│   │   │   ├── FCQRCodeScanViewController.h
-│   │   │   └── FCQRCodeScanViewController.m
-│   │   └── View
-│   │       ├── FCQRScanView.h
-│   │       └── FCQRScanView.m
-│   ├── demo.entitlements
-│   ├── demo.plist  demo工程小程序列表
-│   ├── finosprite.plist finosprite工程小程序列表
-│   ├── main.m
-│   └── servers.plist  初始化SDK的服务器列表
-├── demo.xcodeproj
-```
-
-## 📋 Demo功能介绍
-**微信登录**
-
-微信登录是通过自定义api注入`login`来实现的，需要依赖微信开放SDK。
-* 首先注册微信SDK的Key和universallink。
-* 通过自定义api，注册`login`。可参考`FINExtensionHelper` 中 注册的`login`的逻辑。
-
-**微信支付**
-
-微信支付也是通过自定义api注入`requestPayment`来实现的，需要依赖微信开放SDK。
-* 首先注册微信SDK的Key和universallink。
-* 通过自定义api，注册`requestPayment`。可参考`FINExtensionHelper` 中 注册的`requestPayment`的逻辑。
-
-**百度地图**
-
-小程序中的Map组件默认是使用系统的Map以及相关api来实现的。您也可以选择使用百度地图的Map组件。我们在Demo里已经添加了`FinAppletBDMap`的依赖，它是我们基于百度地图做的扩展SDK。
-
-如果要使用百度地图版本的Map组件，则只需要在初始化FinClip SDK成功后，调用`[FATBDMapComponent setBDMapAppKey:@"申请的key"];`即可。
-可参考`AppDelegate`的`application:didFinishLaunchingWithOptions:`方法里的注册百度地图。
-
-**高德地图**
-
-同理，如果选择使用高德地图的Map组件。我们在Demo里也已经添加了`FinAppletGDMap`的依赖，它是我们基于高德地图做的扩展SDK。
-
-如果要使用高德地图版本的Map组件，则只需要在初始化FinClip SDK成功后，调用`[FATGDMapComponent setGDMapAppKey:@"申请的key"];`即可。
-可参考`AppDelegate`的`application:didFinishLaunchingWithOptions:`方法里的注册高德地图。
 
 ## 🔗 常用链接
 以下内容是您在 FinClip 进行开发与体验时，常见的问题与指引信息
