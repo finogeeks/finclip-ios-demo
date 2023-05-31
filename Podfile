@@ -1,19 +1,17 @@
-platform :ios, "9.0"
+source 'https://github.com/CocoaPods/Specs.git'
+#国内的源
+#source  'https://cdn.cocoapods.org/'
 
-source 'https://cdn.cocoapods.org/'
+target 'FinDemo' do
 
+  #FinClip核心SDK，必集成（其他子SDK都是可选）。最低支持iOS9.0系统
+  #pod 'FinApplet'
 
-inhibit_all_warnings!
+  #如小程序中用到chooseLocation、getLocation、openLocation、choosePoi、startRecord、stopRecord、RecorderManager这些api，可集成该子SDK
+  #pod 'FinAppletExt'
+  
 
-target "demo" do
-   pod 'FinApplet'
-   pod 'FinAppletExt'
-   pod 'FinAppletWebRTC'
-   pod 'FinAppletBDMap'
-   pod 'FinAppletGDMap'
-   pod 'FinAppletBLE'
-   pod 'WechatOpenSDK'
+  
+  
 end
 
-
-#
