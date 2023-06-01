@@ -24,7 +24,7 @@ static NSString *cellID = @"cellid";
         @{@"title" : @"日志管理", @"class" : @"FinManageViewController"},
         @{@"title" : @"UI样式自定义", @"class" : @"FinCustomUIViewController"},
         @{@"title" : @"api自定义", @"class" : @"FinCustomApiViewController"},
-//        @{@"title" : @"", @"class" : @""},
+        @{@"title" : @"代理方法", @"class" : @"FinDelegateViewController"},
     ].mutableCopy;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
 }

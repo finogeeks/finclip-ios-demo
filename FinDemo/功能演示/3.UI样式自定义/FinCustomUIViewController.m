@@ -33,6 +33,10 @@
  */
 - (instancetype)init {
     if (self = [super init]) {
+        //在有缓存的情况下，loading页面可能会一闪而逝，所以这里先清除缓存方便观察
+        [[FATClient sharedClient] clearMemoryCache];
+        [[FATClient sharedClient] clearLocalApplets];
+        
         //自定义loading页面的样式
         [FATClient sharedClient].config.baseLoadingViewClass = @"LoadingView";
     }

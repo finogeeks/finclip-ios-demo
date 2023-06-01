@@ -113,4 +113,7 @@
     NSLog(@"%@", NSStringFromSelector(_cmd));
 }
 
+- (void)dealloc {
+    [FATClient sharedClient].lifeCycleDelegate = nil;
+}
 @end

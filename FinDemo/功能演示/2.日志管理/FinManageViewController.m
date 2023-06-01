@@ -8,7 +8,7 @@
 #import "FinManageViewController.h"
 #import <FinApplet/FinApplet.h>
 
-@interface FinManageViewController ()
+@interface FinManageViewController ()<FATAppletLogDelegate>
 
 @end
 
@@ -19,6 +19,7 @@
         NSArray *patchs = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
         NSString *documentsDirectory = [patchs objectAtIndex:0];
         NSString *logDir = [documentsDirectory stringByAppendingPathComponent:@"ABC_FinClip_LogFiles"];
+        NSLog(@"记录日志的路径是：%@", logDir);
 
         //开启不同level的日志可以看到不同的log
         [[FATClient sharedClient].logManager initLogWithLogDir:logDir logLevel:FATLogLevelDebug consoleLog:YES];
