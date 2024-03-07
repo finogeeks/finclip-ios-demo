@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2BC5B27B2B996B3E00E082E9 /* FinNomalStartWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BC5B27A2B996B3E00E082E9 /* FinNomalStartWidgetViewController.m */; };
 		A5E020AE5E13AC7CEB65DB6D /* libPods-FinDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F92103C497B51062D53EACA4 /* libPods-FinDemo.a */; };
 		D60E44C32A25BFF500F256B1 /* FinCustomUIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D60E44C22A25BFF500F256B1 /* FinCustomUIViewController.m */; };
 		D60E44C52A25C2E700F256B1 /* finclipLogin.zip in Resources */ = {isa = PBXBuildFile; fileRef = D60E44C42A25C2E600F256B1 /* finclipLogin.zip */; };
@@ -26,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2BC5B2792B996B3E00E082E9 /* FinNomalStartWidgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinNomalStartWidgetViewController.h; sourceTree = "<group>"; };
+		2BC5B27A2B996B3E00E082E9 /* FinNomalStartWidgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FinNomalStartWidgetViewController.m; sourceTree = "<group>"; };
 		5D8C9A62395C924AC1334F55 /* Pods-FinDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinDemo.release.xcconfig"; path = "Target Support Files/Pods-FinDemo/Pods-FinDemo.release.xcconfig"; sourceTree = "<group>"; };
 		C5CA001A70332B91FE135258 /* Pods-FinDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinDemo.debug.xcconfig"; path = "Target Support Files/Pods-FinDemo/Pods-FinDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D60E44C12A25BFF500F256B1 /* FinCustomUIViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FinCustomUIViewController.h; sourceTree = "<group>"; };
@@ -70,6 +73,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BC5B2772B996AEA00E082E9 /* 打开小组件 */ = {
+			isa = PBXGroup;
+			children = (
+				2BC5B2782B996B1200E082E9 /* 普通打开小组件 */,
+			);
+			path = "打开小组件";
+			sourceTree = "<group>";
+		};
+		2BC5B2782B996B1200E082E9 /* 普通打开小组件 */ = {
+			isa = PBXGroup;
+			children = (
+				2BC5B2792B996B3E00E082E9 /* FinNomalStartWidgetViewController.h */,
+				2BC5B27A2B996B3E00E082E9 /* FinNomalStartWidgetViewController.m */,
+			);
+			path = "普通打开小组件";
+			sourceTree = "<group>";
+		};
 		4986B21812B70137AECC9394 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +137,7 @@
 		D6471C182A2492340054EF34 /* 功能演示 */ = {
 			isa = PBXGroup;
 			children = (
+				2BC5B2772B996AEA00E082E9 /* 打开小组件 */,
 				D6471C1C2A2492340054EF34 /* 1.打开小程序 */,
 				D6471C1A2A2492340054EF34 /* 2.日志管理 */,
 				D6471C1B2A2492340054EF34 /* 3.UI样式自定义 */,
@@ -323,6 +344,7 @@
 				D60E44C32A25BFF500F256B1 /* FinCustomUIViewController.m in Sources */,
 				D6471C2D2A25955C0054EF34 /* FinScanStartViewController.m in Sources */,
 				D6471C2A2A2595000054EF34 /* FinNormalStartViewController.m in Sources */,
+				2BC5B27B2B996B3E00E082E9 /* FinNomalStartWidgetViewController.m in Sources */,
 				D6471C012A2485AC0054EF34 /* AppDelegate.m in Sources */,
 				D6471C122A2485AF0054EF34 /* main.m in Sources */,
 				D6471C272A2496E30054EF34 /* FinManageViewController.m in Sources */,
@@ -472,7 +494,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M6UWNQYZ59;
+				DEVELOPMENT_TEAM = 9QCKYFU5M4;
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinDemo/Info.plist;
@@ -502,7 +524,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M6UWNQYZ59;
+				DEVELOPMENT_TEAM = 9QCKYFU5M4;
 				ENABLE_BITCODE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FinDemo/Info.plist;
