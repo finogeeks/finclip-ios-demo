@@ -6,11 +6,11 @@ source 'https://git.finogeeks.com/cocoapods/FinPods'
 target 'FinDemo' do
 
   #FinClip核心SDK，必集成（其他子SDK都是可选）。最低支持iOS9.0系统
-  pod 'FinApplet', '2.43.8-alpha20240307v01'
+  pod 'FinApplet', '2.43.9-alpha20240321v01'
 
 
   #如小程序中用到chooseLocation、getLocation、openLocation、choosePoi、startRecord、stopRecord、RecorderManager这些api，可集成该子SDK
-  pod 'FinAppletExt', '2.43.8-alpha20240307v01'
+  pod 'FinAppletExt', '2.43.9-alpha20240321v01'
   
 
   
